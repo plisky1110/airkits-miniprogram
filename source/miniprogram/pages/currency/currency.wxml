@@ -1,4 +1,4 @@
-<view class="page currency-page {{keypadExpanded ? 'keypad-open' : 'keypad-closed'}}">
+<view class="page currency-page {{keypadExpanded ? 'keypad-open' : 'keypad-closed'}}" bindtap="hideKeypad">
   <view class="topbar" style="height: {{navHeight}}px; padding-top: {{statusBarHeight}}px;">
     <view class="brand">
       <button class="brand-mark icon-plane-takeoff" bindtap="goHome" aria-label="返回首页"></button>
@@ -10,7 +10,7 @@
     </view>
   </view>
 
-  <view class="converter-card" bindtap="showKeypad">
+  <view class="converter-card" catchtap="showKeypad">
       <view class="currency-panel">
         <view class="currency-head">
           <picker mode="selector" range="{{currencies}}" range-key="code" value="{{fromIndex}}" bindchange="onFromChange">
@@ -18,7 +18,12 @@
           </picker>
           <view class="currency-code">{{fromCurrency.code}}</view>
         </view>
-        <input class="amount-input" type="digit" value="{{amount}}" bindinput="onAmountInput" bindblur="onAmountBlur" />
+        <view class="amount-input amount-display" bindtap="showKeypad">
+          <view class="amount-edit-line" catchtap="selectAmount">
+            <text>{{amountDisplay}}</text>
+            <view wx:if="{{keypadExpanded && activeField == 'amount'}}" class="amount-cursor"></view>
+          </view>
+        </view>
       </view>
 
       <view class="divider">
@@ -32,13 +37,12 @@
           </picker>
           <view class="currency-code">{{toCurrency.code}}</view>
         </view>
-        <input
-          class="amount-output"
-          type="digit"
-          value="{{result}}"
-          bindinput="onResultInput"
-          bindblur="onResultBlur"
-        />
+        <view class="amount-output amount-display" bindtap="showKeypad">
+          <view class="amount-edit-line" catchtap="selectResult">
+            <text>{{resultDisplay}}</text>
+            <view wx:if="{{keypadExpanded && activeField == 'result'}}" class="amount-cursor result-cursor"></view>
+          </view>
+        </view>
         <view class="muted" style="text-align: right;">示例汇率，仅供功能演示</view>
       </view>
   </view>
@@ -60,6 +64,7 @@
     <view>示例汇率，仅供功能演示</view>
     <view>UPDATED: 2023-11-20 14:30:22 CST</view>
   </view>
+
 </view>
 
 <view class="keypad-shell {{keypadExpanded ? 'expanded' : 'collapsed'}}">
@@ -72,7 +77,7 @@
   </view>
 </view>
 
-<view class="bottom-nav currency-nav">
+<view class="bottom-nav currency-nav" bindtap="hideKeypad">
   <view class="nav-item" bindtap="goHome">
     <view class="nav-icon icon-plane"></view>
     <view>工具箱</view>

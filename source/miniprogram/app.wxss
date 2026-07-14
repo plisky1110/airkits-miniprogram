@@ -750,6 +750,34 @@ button::after {
   font-weight: 900;
 }
 
+.amount-display {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  user-select: none;
+}
+
+.amount-edit-line {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  white-space: nowrap;
+}
+
+.amount-cursor {
+  width: 3rpx;
+  height: 52rpx;
+  margin-left: 6rpx;
+  background: #00327d;
+  animation: amount-cursor-blink 1s steps(2, start) infinite;
+}
+
+@keyframes amount-cursor-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
 .amount-output {
   width: 100%;
   height: 76rpx;
@@ -841,9 +869,9 @@ button::after {
 }
 
 .keypad-toggle {
-  width: 100%;
+  flex: 1;
   height: 76rpx;
-  padding: 0 32rpx;
+  padding: 0 8rpx 0 24rpx;
   display: flex;
   align-items: center;
   justify-content: space-between;

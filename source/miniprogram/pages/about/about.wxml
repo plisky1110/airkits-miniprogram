@@ -33,8 +33,16 @@
   <view class="version-list">
     <view class="version-item">
       <view class="version-head">
-        <text class="version-name">v1.0.0</text>
+        <text class="version-name">v1.0.1</text>
         <text class="version-status">当前版本</text>
+      </view>
+      <view class="version-date">2026-07-14</view>
+      <view class="version-copy">优化汇率换算输入、删除、小数位显示和计算器展开交互。</view>
+    </view>
+    <view class="version-item">
+      <view class="version-head">
+        <text class="version-name">v1.0.0</text>
+        <text class="version-status">基础版本</text>
       </view>
       <view class="version-date">2026-07-12</view>
       <view class="version-copy">首个版本，手搓的要崩溃了，颈椎病都犯了。</view>
