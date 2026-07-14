@@ -17,7 +17,7 @@ Page({
   data: {
     statusBarHeight: 0,
     navHeight: 0,
-    amount: "1000",
+    amount: "1000.00",
     fromIndex: 0,
     toIndex: 1,
     currencies,
