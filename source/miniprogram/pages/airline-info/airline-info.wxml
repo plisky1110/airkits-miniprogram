@@ -1,0 +1,77 @@
+<view class="page query-page airline-page">
+  <view class="topbar" style="height: {{navHeight}}px; padding-top: {{statusBarHeight}}px;">
+    <view class="brand">
+      <button class="brand-mark icon-plane-takeoff" bindtap="goHome" aria-label="返回首页"></button>
+      <text class="brand-title">航空公司信息查询</text>
+    </view>
+    <view class="icon-button">⋯</view>
+  </view>
+
+  <view class="search-wrap">
+    <view class="search-row">
+      <button class="query-back-button" bindtap="goHome" aria-label="返回首页">←</button>
+      <view class="search-box">
+        <view class="small-search-icon"></view>
+        <input class="search-input" value="{{keyword}}" placeholder="搜索航司名称、代码 (IATA) 或电话" bindinput="onInput" />
+        <button class="icon-button" bindtap="clearKeyword">×</button>
+      </view>
+    </view>
+    <scroll-view scroll-x="false" class="chip-row" enhanced show-scrollbar="{{false}}">
+      <view class="chip-track">
+        <button
+          wx:for="{{categories}}"
+          wx:key="name"
+          class="chip {{item.active ? 'active' : ''}}"
+          data-category="{{item.name}}"
+          bindtap="selectCategory"
+        >{{item.name}}</button>
+      </view>
+    </scroll-view>
+  </view>
+
+  <view class="list" wx:if="{{filteredAirlines.length}}">
+    <view wx:for="{{filteredAirlines}}" wx:key="iataCode" class="info-card airline-card">
+      <view class="card-head">
+        <view class="airline-main">
+          <view class="logo-box">
+            <view class="logo-paper">{{item.logoText}}</view>
+          </view>
+          <view class="title-group">
+            <view class="card-title">{{item.nameCn}}</view>
+            <view class="card-subtitle">{{item.nameEn}}</view>
+          </view>
+        </view>
+        <view class="code-badge">{{item.iataCode}}</view>
+      </view>
+      <view class="call-row">
+        <view>
+          <view class="phone-label">☏　客服热线</view>
+          <view class="phone-number">{{item.phone}}</view>
+        </view>
+        <button class="primary-button" bindtap="callPhone" data-phone="{{item.phone}}">立即拨号</button>
+      </view>
+    </view>
+  </view>
+
+  <view class="empty" wx:else>未找到相关航空公司，请尝试名称、代码或电话。</view>
+  <view class="disclaimer">信息可能会有变动，请以官方渠道发布为准。本工具箱仅提供快速检索参考。</view>
+</view>
+
+<view class="bottom-nav">
+  <view class="nav-item" bindtap="goHome">
+    <view class="nav-icon grid-icon"></view>
+    <view>工具箱</view>
+  </view>
+  <view class="nav-item active">
+    <view class="nav-icon search-nav-icon"></view>
+    <view>查询</view>
+  </view>
+  <view class="nav-item">
+    <view class="nav-icon bookmark-icon"></view>
+    <view>收藏</view>
+  </view>
+  <view class="nav-item" bindtap="openAbout">
+    <view class="nav-icon gear-icon"></view>
+    <view>关于</view>
+  </view>
+</view>

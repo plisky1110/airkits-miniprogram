@@ -1,0 +1,1144 @@
+page {
+  min-height: 100vh;
+  background: #f8f9ff;
+  color: #0b1c30;
+  font-family: "Source Han Sans SC", "Noto Sans CJK SC", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+}
+
+view,
+text,
+input,
+button {
+  box-sizing: border-box;
+}
+
+button {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  line-height: inherit;
+  font: inherit;
+}
+
+button::after {
+  border: 0;
+}
+
+.page {
+  min-height: 100vh;
+  padding: 0 32rpx 164rpx;
+  background: #f8f9ff;
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  height: 112rpx;
+  margin: 0 -32rpx;
+  padding: 0 32rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(248, 249, 255, 0.96);
+  border-bottom: 1rpx solid rgba(226, 232, 240, 0.7);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+  min-width: 0;
+}
+
+.brand-mark,
+.tool-icon {
+  width: 72rpx;
+  height: 72rpx;
+  border-radius: 12rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #00327d;
+  background: #e6eef7;
+  position: relative;
+}
+
+.brand-title {
+  font-size: 34rpx;
+  line-height: 48rpx;
+  font-weight: 800;
+  color: #003380;
+}
+
+.icon-button {
+  width: 72rpx;
+  height: 72rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #434653;
+  font-size: 36rpx;
+}
+
+.hero {
+  padding: 56rpx 0 54rpx;
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+  color: #00327d;
+  font-size: 28rpx;
+  line-height: 40rpx;
+  font-weight: 600;
+}
+
+.eyebrow-line {
+  width: 44rpx;
+  height: 4rpx;
+  background: #00327d;
+}
+
+.hero-title {
+  margin-top: 0;
+  font-size: 52rpx;
+  line-height: 68rpx;
+  font-weight: 900;
+  color: #0b1c30;
+}
+
+.hero-copy {
+  margin-top: 18rpx;
+  color: #64748b;
+  font-size: 28rpx;
+  line-height: 44rpx;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24rpx;
+}
+
+.entry-card,
+.info-card,
+.converter-card,
+.mini-card {
+  background: #ffffff;
+  border: 1rpx solid #e2e8f0;
+  border-radius: 16rpx;
+}
+
+.entry-card {
+  min-height: 310rpx;
+  padding: 32rpx;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.entry-title {
+  margin-top: 34rpx;
+  font-size: 34rpx;
+  line-height: 46rpx;
+  font-weight: 800;
+  color: #0b1c30;
+}
+
+.entry-desc,
+.muted {
+  color: #64748b;
+  font-size: 24rpx;
+  line-height: 34rpx;
+}
+
+.arrow {
+  margin-top: auto;
+  align-self: flex-end;
+  color: #737784;
+  font-size: 34rpx;
+}
+
+.notice {
+  margin-top: 28rpx;
+  padding: 32rpx;
+  border-radius: 16rpx;
+  background: #003380;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 12rpx 28rpx rgba(0, 51, 128, 0.18);
+}
+
+.notice-title {
+  font-size: 34rpx;
+  line-height: 46rpx;
+  font-weight: 800;
+}
+
+.notice-copy {
+  margin-top: 6rpx;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 24rpx;
+}
+
+.footer-note {
+  padding: 64rpx 0 0;
+  text-align: center;
+  color: #64748b;
+  font-size: 24rpx;
+  line-height: 40rpx;
+}
+
+.footer-words {
+  margin-top: 18rpx;
+  color: #737784;
+  font-size: 22rpx;
+  letter-spacing: 4rpx;
+}
+
+.search-wrap {
+  position: sticky;
+  top: 112rpx;
+  z-index: 10;
+  margin: 0 -32rpx;
+  padding: 24rpx 32rpx;
+  background: rgba(248, 249, 255, 0.96);
+  border-bottom: 1rpx solid rgba(226, 232, 240, 0.7);
+}
+
+.search-box {
+  position: relative;
+  height: 92rpx;
+  padding: 0 24rpx;
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+  border: 1rpx solid #e2e8f0;
+  border-radius: 16rpx;
+  background: #ffffff;
+}
+
+.search-row {
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+}
+
+.query-back-button {
+  flex: 0 0 56rpx;
+  width: 56rpx;
+  height: 72rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #00327d;
+  font-size: 44rpx;
+  line-height: 1;
+}
+
+.search-row .search-box {
+  flex: 1;
+  min-width: 0;
+}
+
+.small-search-icon {
+  position: relative;
+  width: 44rpx;
+  height: 44rpx;
+  color: #64748b;
+  flex: 0 0 auto;
+}
+
+.small-search-icon::before {
+  content: "⌕";
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 46rpx;
+}
+
+.search-input {
+  flex: 1;
+  width: 0;
+  min-width: 0;
+  height: 88rpx;
+  padding-right: 0;
+  color: #0b1c30;
+  font-size: 28rpx;
+}
+
+.search-box > .icon-button {
+  position: static;
+  flex: 0 0 72rpx;
+  width: 72rpx;
+}
+
+.chip-row {
+  display: flex;
+  gap: 16rpx;
+  margin-top: 20rpx;
+  white-space: nowrap;
+}
+
+.chip {
+  padding: 10rpx 22rpx;
+  border-radius: 999rpx;
+  background: #d3e4fe;
+  color: #434653;
+  font-size: 24rpx;
+  font-weight: 600;
+}
+
+.chip.active {
+  background: #00327d;
+  color: #ffffff;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 24rpx;
+  padding-top: 24rpx;
+}
+
+.info-card {
+  padding: 32rpx;
+}
+
+.query-page {
+  padding-top: 0;
+}
+
+.query-page .topbar {
+  height: 122rpx;
+  border-bottom: 1rpx solid #e2e8f0;
+  box-sizing: border-box;
+}
+
+.query-page .brand-mark {
+  width: 56rpx;
+  height: 56rpx;
+  background: transparent;
+  border-radius: 0;
+}
+
+.query-page .brand-title {
+  font-size: 34rpx;
+  line-height: 44rpx;
+}
+
+.query-page .search-wrap {
+  top: 122rpx;
+}
+
+.airline-page .search-wrap {
+  position: static;
+  padding-top: 24rpx;
+  padding-bottom: 18rpx;
+  margin-top: 0;
+  border-bottom: 1rpx solid rgba(226, 232, 240, 0.8);
+}
+
+.airline-page .chip-row {
+  display: block;
+  overflow: hidden;
+  width: 100%;
+  margin-top: 18rpx;
+  white-space: nowrap;
+}
+
+.airline-page .chip-track {
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+  width: 588rpx;
+}
+
+.airline-page .chip {
+  display: inline-flex;
+  flex: 0 0 auto !important;
+  align-items: center;
+  justify-content: center;
+  padding: 10rpx 8rpx;
+  border-radius: 999rpx;
+  background: #d3e4fe;
+  color: #434653;
+  font-size: 24rpx;
+  line-height: 34rpx;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.airline-page .chip:nth-child(1) {
+  width: 96rpx;
+}
+
+.airline-page .chip:nth-child(2) {
+  width: 144rpx;
+}
+
+.airline-page .chip:nth-child(3) {
+  width: 156rpx;
+}
+
+.airline-page .chip:nth-child(4) {
+  width: 144rpx;
+}
+
+.airline-page .search-box {
+  position: relative;
+}
+
+.airline-page .search-input {
+  padding-right: 0;
+}
+
+.airline-page .search-box > .icon-button {
+  position: static;
+}
+
+.airline-page .chip.active {
+  background: #00327d;
+  color: #ffffff;
+}
+
+.airport-page .search-wrap {
+  position: static;
+  padding-top: 24rpx;
+  padding-bottom: 18rpx;
+  margin-top: 0;
+  border-bottom: 1rpx solid rgba(226, 232, 240, 0.8);
+}
+
+.airport-page .search-box {
+  height: 72rpx;
+  border-radius: 8rpx;
+}
+
+.airport-page .search-input {
+  height: 68rpx;
+}
+
+.airport-page .chip-row {
+  display: block;
+  margin-top: 18rpx;
+  width: 100%;
+  white-space: nowrap;
+}
+
+.airport-page .chip-track {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.airport-page .chip {
+  display: flex;
+  flex: 1 1 0;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0 12rpx;
+  border-radius: 0;
+  background: transparent;
+  color: #64748b;
+  font-size: 24rpx;
+  line-height: 34rpx;
+}
+
+.airport-page .chip-row {
+  overflow: hidden;
+}
+
+.airport-page .brand-mark.icon-plane-takeoff::before {
+  content: "✈";
+  transform: rotate(-18deg);
+  font-size: 34rpx;
+}
+
+.airport-page .chip.active {
+  background: transparent;
+  color: #00327d;
+  border-bottom: 4rpx solid #00327d;
+}
+
+.airline-card {
+  padding: 32rpx;
+  box-shadow: 0 3rpx 8rpx rgba(15, 23, 42, 0.04);
+}
+
+.airline-main {
+  display: flex;
+  gap: 24rpx;
+  min-width: 0;
+}
+
+.logo-box {
+  flex: 0 0 auto;
+  width: 92rpx;
+  height: 92rpx;
+  padding: 12rpx;
+  border-radius: 8rpx;
+  background: #dce9ff;
+  border: 1rpx solid #d3e4fe;
+}
+
+.logo-paper {
+  width: 100%;
+  height: 100%;
+  border-radius: 4rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.76);
+  color: #00327d;
+  font-size: 20rpx;
+  font-weight: 900;
+}
+
+.airport-card {
+  padding: 28rpx 32rpx;
+}
+
+.airport-card .card-title {
+  font-size: 32rpx;
+}
+
+.airport-card .code-badge {
+  min-width: 90rpx;
+  padding: 12rpx 16rpx;
+  border-radius: 4rpx;
+  color: #642f00;
+  font-size: 34rpx;
+}
+
+.level-chip {
+  display: inline-flex;
+  margin-left: 12rpx;
+  padding: 4rpx 10rpx;
+  border-radius: 4rpx;
+  background: #e6eef7;
+  color: #00327d;
+  font-size: 20rpx;
+}
+
+.card-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24rpx;
+}
+
+.title-group {
+  min-width: 0;
+}
+
+.card-title {
+  font-size: 34rpx;
+  line-height: 44rpx;
+  font-weight: 800;
+  color: #0b1c30;
+}
+
+.card-subtitle {
+  margin-top: 6rpx;
+  color: #64748b;
+  font-size: 26rpx;
+  line-height: 36rpx;
+}
+
+.code-badge {
+  flex: 0 0 auto;
+  min-width: 72rpx;
+  padding: 8rpx 14rpx;
+  border-radius: 8rpx;
+  text-align: center;
+  background: #ff8928;
+  color: #642f00;
+  font-size: 30rpx;
+  line-height: 38rpx;
+  font-weight: 900;
+}
+
+.data-row {
+  margin-top: 22rpx;
+  display: flex;
+  align-items: center;
+  gap: 12rpx;
+  color: #434653;
+  font-size: 26rpx;
+  line-height: 38rpx;
+}
+
+.call-row {
+  margin-top: 28rpx;
+  padding-top: 24rpx;
+  border-top: 1rpx solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24rpx;
+}
+
+.phone-label {
+  color: #64748b;
+  font-size: 22rpx;
+}
+
+.phone-number {
+  margin-top: 4rpx;
+  color: #0047ab;
+  font-size: 32rpx;
+  line-height: 42rpx;
+  font-weight: 800;
+}
+
+.primary-button {
+  flex: 0 0 auto;
+  padding: 18rpx 28rpx;
+  border-radius: 999rpx;
+  background: #00327d;
+  color: #ffffff;
+  font-size: 24rpx;
+  font-weight: 700;
+}
+
+.airline-card .primary-button,
+.airport-card .primary-button {
+  min-width: 150rpx;
+  padding: 18rpx 26rpx;
+  background: #dce9ff;
+  border: 1rpx solid #b9d0f5;
+  color: #00327d;
+  box-shadow: 0 4rpx 8rpx rgba(0, 50, 125, 0.1);
+  margin-right: 0;
+}
+
+.airport-phone {
+  color: #0b1c30;
+  font-size: 28rpx;
+  font-weight: 500;
+}
+
+.empty {
+  padding: 88rpx 32rpx;
+  text-align: center;
+  color: #64748b;
+  font-size: 28rpx;
+}
+
+.disclaimer {
+  margin-top: 32rpx;
+  color: #64748b;
+  font-size: 22rpx;
+  line-height: 36rpx;
+}
+
+.city-region-row {
+  display: block;
+  width: 100%;
+  margin-top: 20rpx;
+}
+
+.city-region-track {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12rpx;
+  width: 100%;
+}
+
+.city-region-chip {
+  display: flex;
+  flex: 0 0 calc((100% - 36rpx) / 4);
+  align-items: center;
+  justify-content: center;
+  width: calc((100% - 36rpx) / 4);
+  min-width: 0;
+  padding: 10rpx 8rpx;
+  border-radius: 999rpx;
+  background: #d3e4fe;
+  color: #434653;
+  font-size: 24rpx;
+  line-height: 34rpx;
+  white-space: nowrap;
+}
+
+.city-region-chip.active {
+  background: #00327d;
+  color: #ffffff;
+}
+
+.time-card .time {
+  margin-top: 24rpx;
+  color: #00327d;
+  font-size: 48rpx;
+  line-height: 58rpx;
+  font-weight: 900;
+}
+
+.time-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16rpx;
+  margin-top: 12rpx;
+  color: #64748b;
+  font-size: 24rpx;
+}
+
+.converter-card {
+  margin-top: 24rpx;
+  overflow: hidden;
+}
+
+.currency-page {
+  padding-bottom: 650rpx;
+}
+
+.currency-page .topbar {
+  height: 102rpx;
+}
+
+.currency-page .brand-mark {
+  width: 56rpx;
+  height: 56rpx;
+  background: transparent;
+}
+
+.currency-actions {
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+}
+
+.currency-panel {
+  padding: 32rpx;
+}
+
+.currency-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16rpx;
+  font-weight: 800;
+  color: #0b1c30;
+}
+
+.currency-code {
+  color: #964900;
+}
+
+.amount-input {
+  width: 100%;
+  height: 76rpx;
+  margin-top: 20rpx;
+  text-align: right;
+  color: #00327d;
+  font-size: 48rpx;
+  font-weight: 900;
+}
+
+.amount-output {
+  width: 100%;
+  height: 76rpx;
+  margin-top: 20rpx;
+  padding: 0;
+  border: 0;
+  text-align: right;
+  color: #434653;
+  font-size: 48rpx;
+  line-height: 60rpx;
+  font-weight: 900;
+}
+
+.divider {
+  position: relative;
+  height: 1rpx;
+  background: #e2e8f0;
+}
+
+.swap-button {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 88rpx !important;
+  min-width: 88rpx;
+  max-width: 88rpx;
+  height: 88rpx;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #00327d;
+  border: 6rpx solid #f8f9ff;
+  color: #ffffff;
+  font-size: 32rpx;
+  font-weight: 800;
+  line-height: 1;
+  box-shadow: 0 8rpx 18rpx rgba(0, 50, 125, 0.22);
+}
+
+.mini-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20rpx;
+  margin-top: 20rpx;
+}
+
+.mini-card {
+  padding: 24rpx;
+}
+
+.mini-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 10rpx;
+  color: #0b1c30;
+  font-size: 24rpx;
+  font-weight: 800;
+}
+
+.mini-value {
+  margin-top: 10rpx;
+  color: #434653;
+  font-size: 30rpx;
+  font-weight: 800;
+}
+
+.currency-note {
+  margin-top: 44rpx;
+  text-align: center;
+  color: #94a3b8;
+  font-size: 24rpx;
+}
+
+.keypad {
+  position: fixed;
+  left: 0;
+  right: 0;
+  width: 100%;
+  bottom: 132rpx;
+  z-index: 25;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  background: #ffffff;
+  border-top: 1rpx solid #dbe3ef;
+}
+
+.key {
+  width: 100%;
+  min-width: 0;
+  padding: 0;
+  height: 104rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1rpx solid #dbe3ef;
+  border-bottom: 1rpx solid #dbe3ef;
+  color: #0b1c30;
+  font-size: 34rpx;
+  background: #ffffff;
+}
+
+.key:nth-child(12) {
+  background: #eff4ff;
+  color: #00327d;
+}
+
+.bottom-nav {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 30;
+  height: 132rpx;
+  padding-bottom: env(safe-area-inset-bottom);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background: #ffffff;
+  border-top: 1rpx solid #e2e8f0;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4rpx;
+  color: #64748b;
+  font-size: 22rpx;
+}
+
+.nav-item.active {
+  color: #00327d;
+  font-weight: 800;
+}
+
+.currency-nav .nav-item.active {
+  color: #964900;
+}
+
+.about-page {
+  padding-bottom: 164rpx;
+}
+
+.about-hero {
+  padding: 64rpx 32rpx 48rpx;
+  text-align: center;
+}
+
+.about-mark {
+  width: 104rpx;
+  height: 104rpx;
+  margin: 0 auto;
+  border-radius: 16rpx;
+  background: #e6eef7;
+  color: #00327d;
+}
+
+.about-title {
+  margin-top: 24rpx;
+  color: #0b1c30;
+  font-size: 40rpx;
+  line-height: 54rpx;
+  font-weight: 900;
+}
+
+.about-subtitle {
+  margin-top: 6rpx;
+  color: #64748b;
+  font-size: 26rpx;
+  line-height: 36rpx;
+}
+
+.about-version {
+  display: inline-flex;
+  margin-top: 20rpx;
+  padding: 8rpx 18rpx;
+  border-radius: 999rpx;
+  background: #dce9ff;
+  color: #00327d;
+  font-size: 22rpx;
+  line-height: 32rpx;
+}
+
+.about-list {
+  overflow: hidden;
+  border-top: 1rpx solid #e2e8f0;
+  border-bottom: 1rpx solid #e2e8f0;
+  background: #ffffff;
+}
+
+.about-item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 32rpx;
+  padding: 28rpx 32rpx;
+  border-bottom: 1rpx solid #e2e8f0;
+}
+
+.about-item:last-child {
+  border-bottom: 0;
+}
+
+.about-item-label {
+  flex: 0 0 auto;
+  color: #64748b;
+  font-size: 26rpx;
+  line-height: 38rpx;
+}
+
+.about-item-value {
+  color: #0b1c30;
+  font-size: 26rpx;
+  line-height: 38rpx;
+  text-align: right;
+}
+
+.about-section-title {
+  margin: 44rpx 0 18rpx;
+  color: #0b1c30;
+  font-size: 30rpx;
+  line-height: 42rpx;
+  font-weight: 800;
+}
+
+.version-list {
+  background: #ffffff;
+  border: 1rpx solid #e2e8f0;
+  border-radius: 16rpx;
+}
+
+.version-item {
+  padding: 28rpx 32rpx;
+}
+
+.version-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20rpx;
+}
+
+.version-name {
+  color: #00327d;
+  font-size: 28rpx;
+  line-height: 40rpx;
+  font-weight: 800;
+}
+
+.version-status {
+  padding: 6rpx 14rpx;
+  border-radius: 999rpx;
+  background: #dce9ff;
+  color: #00327d;
+  font-size: 20rpx;
+  line-height: 28rpx;
+}
+
+.version-date {
+  margin-top: 10rpx;
+  color: #94a3b8;
+  font-size: 22rpx;
+  line-height: 32rpx;
+}
+
+.version-copy {
+  margin-top: 12rpx;
+  color: #64748b;
+  font-size: 24rpx;
+  line-height: 36rpx;
+}
+
+.about-footer {
+  padding: 64rpx 0 0;
+  color: #94a3b8;
+  font-size: 22rpx;
+  letter-spacing: 3rpx;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.nav-icon {
+  position: relative;
+  width: 48rpx;
+  height: 44rpx;
+}
+
+.icon-plane-takeoff::before,
+.icon-plane::before,
+.icon-clock::before,
+.icon-currency::before,
+.icon-search::before,
+.icon-campaign::before,
+.grid-icon::before,
+.search-nav-icon::before,
+.bookmark-icon::before,
+.gear-icon::before {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  color: currentColor;
+}
+
+.brand-mark.icon-plane-takeoff,
+.tool-icon.icon-plane-takeoff,
+.tool-icon.icon-plane,
+.tool-icon.icon-clock,
+.tool-icon.icon-currency {
+  color: #00327d;
+}
+
+.icon-plane-takeoff::before {
+  content: "▰";
+  transform: rotate(-18deg) skewX(-18deg);
+  font-size: 36rpx;
+}
+
+.icon-plane-takeoff::after {
+  content: "";
+  position: absolute;
+  left: 12rpx;
+  right: 10rpx;
+  bottom: 16rpx;
+  height: 4rpx;
+  background: currentColor;
+}
+
+.icon-plane::before {
+  content: "✈";
+  font-size: 44rpx;
+}
+
+.icon-clock::before {
+  content: "◷";
+  font-size: 52rpx;
+}
+
+.icon-currency::before {
+  content: "$";
+  width: 42rpx;
+  height: 42rpx;
+  margin: auto;
+  border: 4rpx solid currentColor;
+  border-radius: 50%;
+  font-size: 30rpx;
+  line-height: 42rpx;
+}
+
+.icon-search {
+  position: relative;
+  width: 72rpx;
+  height: 72rpx;
+  color: #434653;
+}
+
+.gear-icon {
+  position: relative;
+}
+
+.icon-search::before,
+.search-nav-icon::before {
+  content: "⌕";
+  font-size: 48rpx;
+}
+
+.icon-campaign {
+  position: relative;
+  width: 66rpx;
+  height: 66rpx;
+  color: #ffffff;
+}
+
+.icon-campaign::before {
+  content: "◖";
+  font-size: 56rpx;
+}
+
+.grid-icon::before {
+  content: "▦";
+  font-size: 42rpx;
+}
+
+.bookmark-icon::before {
+  content: "▱";
+  font-size: 42rpx;
+}
+
+.gear-icon::before {
+  content: "⚙";
+  font-size: 42rpx;
+}

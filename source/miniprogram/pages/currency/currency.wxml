@@ -1,0 +1,86 @@
+<view class="page currency-page">
+  <view class="topbar" style="height: {{navHeight}}px; padding-top: {{statusBarHeight}}px;">
+    <view class="brand">
+      <button class="brand-mark icon-plane-takeoff" bindtap="goHome" aria-label="返回首页"></button>
+      <text class="brand-title">汇率换算</text>
+    </view>
+    <view class="currency-actions">
+      <view class="icon-button">↺</view>
+      <view class="icon-button gear-icon"></view>
+    </view>
+  </view>
+
+  <view class="converter-card">
+      <view class="currency-panel">
+        <view class="currency-head">
+          <picker mode="selector" range="{{currencies}}" range-key="code" value="{{fromIndex}}" bindchange="onFromChange">
+            <view>{{fromCurrency.code}} {{fromCurrency.nameCn}}</view>
+          </picker>
+          <view class="currency-code">{{fromCurrency.code}}</view>
+        </view>
+        <input class="amount-input" type="digit" value="{{amount}}" bindinput="onAmountInput" />
+      </view>
+
+      <view class="divider">
+        <button class="swap-button" bindtap="swap">⇅</button>
+      </view>
+
+      <view class="currency-panel">
+        <view class="currency-head">
+          <picker mode="selector" range="{{currencies}}" range-key="code" value="{{toIndex}}" bindchange="onToChange">
+            <view>{{toCurrency.code}} {{toCurrency.nameCn}}</view>
+          </picker>
+          <view class="currency-code">{{toCurrency.code}}</view>
+        </view>
+        <input
+          class="amount-output"
+          type="digit"
+          value="{{result}}"
+          bindinput="onResultInput"
+          bindblur="onResultBlur"
+        />
+        <view class="muted" style="text-align: right;">示例汇率，仅供功能演示</view>
+      </view>
+  </view>
+
+  <view style="margin-top: 36rpx;">
+    <view class="card-title">常用航空汇率</view>
+    <view class="mini-grid">
+      <view wx:for="{{commonRates}}" wx:key="code" class="mini-card">
+        <view class="mini-head">
+          <text>{{item.code}} {{item.nameCn}}</text>
+          <text>{{item.sampleRateToCny}}</text>
+        </view>
+        <view class="mini-value">{{item.converted}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="disclaimer currency-note">
+    <view>示例汇率，仅供功能演示</view>
+    <view>UPDATED: 2023-11-20 14:30:22 CST</view>
+  </view>
+</view>
+
+<view class="keypad">
+  <button wx:for="{{keypad}}" wx:key="*this" class="key" data-key="{{item}}" bindtap="tapKey">{{item}}</button>
+</view>
+
+<view class="bottom-nav currency-nav">
+  <view class="nav-item" bindtap="goHome">
+    <view class="nav-icon icon-plane"></view>
+    <view>工具箱</view>
+  </view>
+  <view class="nav-item">
+    <view class="nav-icon">⌖</view>
+    <view>查询</view>
+  </view>
+  <view class="nav-item">
+    <view class="nav-icon icon-clock"></view>
+    <view>收藏</view>
+  </view>
+  <view class="nav-item" bindtap="openAbout">
+    <view class="nav-icon icon-currency"></view>
+    <view>关于</view>
+  </view>
+</view>

@@ -1,0 +1,72 @@
+<view class="page query-page airport-page">
+  <view class="topbar" style="height: {{navHeight}}px; padding-top: {{statusBarHeight}}px;">
+    <view class="brand">
+      <button class="brand-mark icon-plane-takeoff" bindtap="goHome" aria-label="返回首页"></button>
+      <text class="brand-title">机场信息查询</text>
+    </view>
+    <view class="icon-button">⋯</view>
+  </view>
+
+  <view class="search-wrap">
+    <view class="search-row">
+      <button class="query-back-button" bindtap="goHome" aria-label="返回首页">←</button>
+      <view class="search-box">
+        <view class="small-search-icon"></view>
+        <input class="search-input" value="{{keyword}}" placeholder="搜索机场名、三字码、城市或省份" bindinput="onInput" />
+        <button class="icon-button" bindtap="clearKeyword">×</button>
+      </view>
+    </view>
+    <scroll-view scroll-x="false" class="chip-row" enhanced show-scrollbar="{{false}}">
+      <view class="chip-track">
+        <button
+          wx:for="{{categories}}"
+          wx:key="name"
+          class="chip {{item.active ? 'active' : ''}}"
+          data-category="{{item.name}}"
+          bindtap="selectCategory"
+        >{{item.name}}</button>
+      </view>
+    </scroll-view>
+  </view>
+
+  <view class="list" wx:if="{{filteredAirports.length}}">
+    <view wx:for="{{filteredAirports}}" wx:key="iataCode" class="info-card airport-card">
+      <view class="card-head">
+        <view class="title-group">
+          <view class="card-title">{{item.nameCn}}</view>
+          <view class="card-subtitle">{{item.nameEn}}</view>
+        </view>
+        <view class="code-badge">{{item.iataCode}}</view>
+      </view>
+      <view class="data-row">⌖ {{item.province}} · {{item.district}} <text class="level-chip">{{item.level}}</text></view>
+      <view class="call-row">
+        <view>
+          <view class="phone-number airport-phone">☏ {{item.phone}}</view>
+        </view>
+        <button class="primary-button" bindtap="callPhone" data-phone="{{item.phone}}">立即拨号</button>
+      </view>
+    </view>
+  </view>
+
+  <view class="empty" wx:else>未找到相关机场，请尝试机场名、城市或三字码。</view>
+  <view class="disclaimer">信息可能会有变动，请以机场官方渠道发布为准。本工具箱仅提供快速检索参考。</view>
+</view>
+
+<view class="bottom-nav">
+  <view class="nav-item" bindtap="goHome">
+    <view class="nav-icon grid-icon"></view>
+    <view>工具箱</view>
+  </view>
+  <view class="nav-item active">
+    <view class="nav-icon search-nav-icon"></view>
+    <view>查询</view>
+  </view>
+  <view class="nav-item">
+    <view class="nav-icon bookmark-icon"></view>
+    <view>收藏</view>
+  </view>
+  <view class="nav-item" bindtap="openAbout">
+    <view class="nav-icon gear-icon"></view>
+    <view>关于</view>
+  </view>
+</view>

@@ -1,0 +1,19 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/airline-info/airline-info",
+    "pages/airport-info/airport-info",
+    "pages/city-time/city-time",
+    "pages/currency/currency",
+    "pages/about/about"
+  ],
+  "window": {
+    "navigationStyle": "custom",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#f8f9ff",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#f8f9ff"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

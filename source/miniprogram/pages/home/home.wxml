@@ -1,0 +1,55 @@
+<view class="page">
+  <view class="topbar" style="height: {{navHeight}}px; padding-top: {{statusBarHeight}}px;">
+    <view class="brand">
+      <view class="brand-mark icon-plane-takeoff"></view>
+      <text class="brand-title">航空工具箱</text>
+    </view>
+    <view class="icon-search"></view>
+  </view>
+
+  <view class="hero">
+    <view class="hero-title">您的航空出行助手</view>
+    <view class="hero-copy">提供专业、快速、准确的民航静态信息查询工具</view>
+  </view>
+
+  <view class="grid">
+    <button wx:for="{{tools}}" wx:key="title" class="entry-card" bindtap="navigate" data-url="{{item.url}}">
+      <view class="tool-icon {{item.iconClass}}"></view>
+      <view class="entry-title">{{item.title}}</view>
+      <view class="entry-desc">{{item.desc}}</view>
+      <view class="arrow">→</view>
+    </button>
+  </view>
+
+  <view class="notice">
+    <view>
+      <view class="notice-title">数据更新公告</view>
+      <view class="notice-copy">已更新 2023 冬春航季机场联系方式</view>
+    </view>
+    <view class="icon-campaign"></view>
+  </view>
+
+  <view class="footer-note">
+    <view>数据仅供参考，请以官方为准</view>
+    <view class="footer-words">RELIABLE · EFFICIENT · PRECISE</view>
+  </view>
+</view>
+
+<view class="bottom-nav">
+  <view class="nav-item active">
+    <view class="nav-icon grid-icon"></view>
+    <view>工具箱</view>
+  </view>
+  <view class="nav-item">
+    <view class="nav-icon search-nav-icon"></view>
+    <view>查询</view>
+  </view>
+  <view class="nav-item">
+    <view class="nav-icon bookmark-icon"></view>
+    <view>收藏</view>
+  </view>
+  <view class="nav-item" bindtap="openAbout">
+    <view class="nav-icon gear-icon"></view>
+    <view>关于</view>
+  </view>
+</view>

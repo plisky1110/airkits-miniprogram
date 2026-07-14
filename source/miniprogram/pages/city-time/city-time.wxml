@@ -1,0 +1,71 @@
+<view class="page query-page city-page">
+  <view class="topbar" style="height: {{navHeight}}px; padding-top: {{statusBarHeight}}px;">
+    <view class="brand">
+      <button class="brand-mark icon-plane-takeoff" bindtap="goHome" aria-label="返回首页"></button>
+      <text class="brand-title">城市时间</text>
+    </view>
+    <view class="icon-button">时</view>
+  </view>
+
+  <view class="search-wrap">
+    <view class="search-row">
+      <button class="query-back-button" bindtap="goHome" aria-label="返回首页">←</button>
+      <view class="search-box">
+        <view class="small-search-icon"></view>
+        <input class="search-input" value="{{keyword}}" placeholder="搜索城市、机场代码或 UTC 偏移" bindinput="onInput" />
+        <button class="icon-button" bindtap="clearKeyword">×</button>
+      </view>
+    </view>
+    <view class="muted" style="margin-top: 16rpx;">常用航空城市时间，基于设备当前时间和 UTC 偏移计算。</view>
+    <view class="city-region-row">
+      <view class="city-region-track">
+        <button
+          wx:for="{{regions}}"
+          wx:key="name"
+          class="city-region-chip {{item.active ? 'active' : ''}}"
+          data-region="{{item.name}}"
+          bindtap="selectRegion"
+        >{{item.name}}</button>
+      </view>
+    </view>
+  </view>
+
+  <view class="list" wx:if="{{cities.length}}">
+    <view wx:for="{{cities}}" wx:key="cityCn" class="info-card time-card">
+      <view class="card-head">
+        <view>
+          <view class="card-title">{{item.cityCn}} {{item.cityEn}}</view>
+          <view class="card-subtitle">{{item.countryCn}} · {{item.dateText}}</view>
+        </view>
+        <view class="code-badge">{{item.codeText}}</view>
+      </view>
+      <view class="time">{{item.timeText}}</view>
+      <view class="time-meta">
+        <text>UTC {{item.utcOffset}}</text>
+        <text>{{item.diffText}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="empty" wx:else>未找到相关城市，请尝试城市名或机场代码。</view>
+  <view class="disclaimer">时间数据仅供参考，当地时间及夏令时以后续时区服务为准。</view>
+</view>
+
+<view class="bottom-nav">
+  <view class="nav-item" bindtap="goHome">
+    <view class="nav-icon grid-icon"></view>
+    <view>工具箱</view>
+  </view>
+  <view class="nav-item active">
+    <view class="nav-icon search-nav-icon"></view>
+    <view>查询</view>
+  </view>
+  <view class="nav-item">
+    <view class="nav-icon bookmark-icon"></view>
+    <view>收藏</view>
+  </view>
+  <view class="nav-item" bindtap="openAbout">
+    <view class="nav-icon gear-icon"></view>
+    <view>关于</view>
+  </view>
+</view>

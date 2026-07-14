@@ -1,0 +1,64 @@
+<view class="page about-page">
+  <view class="topbar" style="height: {{navHeight}}px; padding-top: {{statusBarHeight}}px;">
+    <view class="brand">
+      <button class="brand-mark icon-plane-takeoff" bindtap="goHome" aria-label="返回首页"></button>
+      <text class="brand-title">关于</text>
+    </view>
+    <view class="icon-button">⋯</view>
+  </view>
+
+  <view class="about-hero">
+    <view class="about-mark icon-plane-takeoff"></view>
+    <view class="about-title">航空工具箱</view>
+    <view class="about-subtitle">Aviation Toolbox</view>
+    <view class="about-version">开发版本 v1.0.0</view>
+  </view>
+
+  <view class="about-list">
+    <view class="about-item">
+      <view class="about-item-label">开发者</view>
+      <view class="about-item-value">Airkits Team</view>
+    </view>
+    <view class="about-item">
+      <view class="about-item-label">联系方式</view>
+      <view class="about-item-value">airkits@163.com</view>
+    </view>
+    <view class="about-item">
+      <view class="about-item-label">数据说明</view>
+      <view class="about-item-value">信息仅供快速查询参考。</view>
+    </view>
+  </view>
+
+  <view class="about-section-title">版本历史</view>
+  <view class="version-list">
+    <view class="version-item">
+      <view class="version-head">
+        <text class="version-name">v1.0.0</text>
+        <text class="version-status">当前版本</text>
+      </view>
+      <view class="version-date">2026-07-12</view>
+      <view class="version-copy">首个版本，手搓的要崩溃了，颈椎病都犯了。</view>
+    </view>
+  </view>
+
+  <view class="about-footer">Reliable · Efficient · Precise</view>
+</view>
+
+<view class="bottom-nav about-nav">
+  <view class="nav-item" bindtap="goHome">
+    <view class="nav-icon grid-icon"></view>
+    <view>工具箱</view>
+  </view>
+  <view class="nav-item">
+    <view class="nav-icon search-nav-icon"></view>
+    <view>查询</view>
+  </view>
+  <view class="nav-item">
+    <view class="nav-icon bookmark-icon"></view>
+    <view>收藏</view>
+  </view>
+  <view class="nav-item active">
+    <view class="nav-icon gear-icon"></view>
+    <view>关于</view>
+  </view>
+</view>
