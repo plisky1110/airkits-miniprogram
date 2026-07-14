@@ -42,6 +42,13 @@ Page({
     this.setData({ amount: event.detail.value }, this.calculate)
   },
 
+  onAmountBlur() {
+    const amountValue = Number(this.data.amount || 0)
+    this.setData({
+      amount: Number.isFinite(amountValue) ? amountValue.toFixed(2) : "0.00"
+    }, this.calculate)
+  },
+
   onResultInput(event) {
     const result = event.detail.value
     const resultValue = Number(result || 0)

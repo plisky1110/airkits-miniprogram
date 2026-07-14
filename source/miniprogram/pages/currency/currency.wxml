@@ -18,7 +18,7 @@
           </picker>
           <view class="currency-code">{{fromCurrency.code}}</view>
         </view>
-        <input class="amount-input" type="digit" value="{{amount}}" bindinput="onAmountInput" />
+        <input class="amount-input" type="digit" value="{{amount}}" bindinput="onAmountInput" bindblur="onAmountBlur" />
       </view>
 
       <view class="divider">
