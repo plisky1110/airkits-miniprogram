@@ -1,4 +1,4 @@
-<view class="page currency-page">
+<view class="page currency-page {{keypadExpanded ? 'keypad-open' : 'keypad-closed'}}">
   <view class="topbar" style="height: {{navHeight}}px; padding-top: {{statusBarHeight}}px;">
     <view class="brand">
       <button class="brand-mark icon-plane-takeoff" bindtap="goHome" aria-label="返回首页"></button>
@@ -62,8 +62,14 @@
   </view>
 </view>
 
-<view class="keypad">
-  <button wx:for="{{keypad}}" wx:key="*this" class="key" data-key="{{item}}" bindtap="tapKey">{{item}}</button>
+<view class="keypad-shell {{keypadExpanded ? 'expanded' : 'collapsed'}}">
+  <button class="keypad-toggle" bindtap="toggleKeypad">
+    <text>数字键盘</text>
+    <text class="keypad-toggle-icon">{{keypadExpanded ? '⌄' : '⌃'}}</text>
+  </button>
+  <view wx:if="{{keypadExpanded}}" class="keypad-grid">
+    <button wx:for="{{keypad}}" wx:key="*this" class="key" data-key="{{item}}" bindtap="tapKey">{{item}}</button>
+  </view>
 </view>
 
 <view class="bottom-nav currency-nav">

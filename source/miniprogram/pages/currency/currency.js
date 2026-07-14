@@ -25,6 +25,7 @@ Page({
     toCurrency: currencies[1],
     result: "137.46",
     commonRates: [],
+    keypadExpanded: false,
     keypad: ["1", "2", "3", "4", "5", "6", "7", "8", "9", ".", "0", "⌫"]
   },
 
@@ -87,6 +88,10 @@ Page({
       amount = amount === "0" && key !== "." ? key : amount + key
     }
     this.setData({ amount }, this.calculate)
+  },
+
+  toggleKeypad() {
+    this.setData({ keypadExpanded: !this.data.keypadExpanded })
   },
 
   calculate() {
