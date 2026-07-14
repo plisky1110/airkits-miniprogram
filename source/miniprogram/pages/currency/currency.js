@@ -101,6 +101,12 @@ Page({
     this.setData({ keypadExpanded: !this.data.keypadExpanded })
   },
 
+  showKeypad() {
+    if (!this.data.keypadExpanded) {
+      this.setData({ keypadExpanded: true })
+    }
+  },
+
   calculate() {
     const from = currencies[this.data.fromIndex]
     const to = currencies[this.data.toIndex]

@@ -10,7 +10,7 @@
     </view>
   </view>
 
-  <view class="converter-card">
+  <view class="converter-card" bindtap="showKeypad">
       <view class="currency-panel">
         <view class="currency-head">
           <picker mode="selector" range="{{currencies}}" range-key="code" value="{{fromIndex}}" bindchange="onFromChange">
@@ -64,7 +64,7 @@
 
 <view class="keypad-shell {{keypadExpanded ? 'expanded' : 'collapsed'}}">
   <button class="keypad-toggle" bindtap="toggleKeypad">
-    <text>数字键盘</text>
+    <text>汇率换算器</text>
     <text class="keypad-toggle-icon">{{keypadExpanded ? '⌄' : '⌃'}}</text>
   </button>
   <view wx:if="{{keypadExpanded}}" class="keypad-grid">
