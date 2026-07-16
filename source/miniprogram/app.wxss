@@ -119,9 +119,8 @@ button::after {
 }
 
 .grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24rpx;
+  position: relative;
+  height: 668rpx;
 }
 
 .entry-card,
@@ -134,11 +133,20 @@ button::after {
 }
 
 .entry-card {
+  position: absolute;
+  width: 331rpx;
   min-height: 310rpx;
   padding: 32rpx;
   display: flex;
   flex-direction: column;
   text-align: left;
+  transition: box-shadow 160ms ease, transform 160ms ease;
+}
+
+.entry-card.dragging {
+  z-index: 10;
+  box-shadow: 0 18rpx 36rpx rgba(11, 28, 48, 0.2);
+  transform: scale(1.02);
 }
 
 .entry-title {
